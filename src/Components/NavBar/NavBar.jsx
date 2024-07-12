@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <header class="header_section">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
+    <header className="header_section">
+      <div className="container">
+        <nav className="navbar navbar-expand-lg custom_nav-container">
+          <Link className="navbar-brand" to="/">
             <img width="250" src="images/logo.png" alt="#" />
-          </a>
+          </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -17,55 +18,55 @@ const NavBar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class=""> </span>
+            <span className=""> </span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                  Home <span class="sr-only">(current)</span>
-                </a>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <Link className="nav-link" to="/">
+                  Home <span className="sr-only">(current)</span>
+                </Link>
               </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
+              <li className="nav-item dropdown">
+                <Link
+                  className="nav-link dropdown-toggle"
+                  to="#"
                   data-toggle="dropdown"
                   role="button"
                   aria-haspopup="true"
                   aria-expanded="true"
                 >
                   {" "}
-                  <span class="nav-label">
-                    Pages <span class="caret"></span>
+                  <span className="nav-label">
+                    Pages <span className="caret"></span>
                   </span>
-                </a>
-                <ul class="dropdown-menu">
+                </Link>
+                <ul className="dropdown-menu">
                   <li>
-                    <a href="about.html">About</a>
+                    <Link to="/about">About</Link>
                   </li>
                   <li>
-                    <a href="testimonial.html">Testimonial</a>
+                    <Link to="/testimonial">Testimonial</Link>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="product.html">
+              <li className="nav-item">
+                <Link className="nav-link" to="/product">
                   Products
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blog_list.html">
+              <li className="nav-item">
+                <Link className="nav-link" to="/blog_list">
                   Blog
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact">
                   Contact
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <Link className="nav-link" to="/cart">
                   <svg
                     version="1.1"
                     id="Capa_1"
@@ -73,13 +74,13 @@ const NavBar = () => {
                     x="0px"
                     y="0px"
                     viewBox="0 0 456.029 456.029"
-                    styleName={{ enableBackground: "new 0 0 456.029 456.029" }}
+                    style={{ enableBackground: "new 0 0 456.029 456.029" }}
                   >
                     <g>
                       <g>
                         <path
                           d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                                          c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z"
+                            c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z"
                         />
                       </g>
                     </g>
@@ -87,9 +88,9 @@ const NavBar = () => {
                       <g>
                         <path
                           d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                                          C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                                          c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                                          C457.728,97.71,450.56,86.958,439.296,84.91z"
+                            C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                            c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                            C457.728,97.71,450.56,86.958,439.296,84.91z"
                         />
                       </g>
                     </g>
@@ -97,7 +98,7 @@ const NavBar = () => {
                       <g>
                         <path
                           d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                                          c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"
+                            c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"
                         />
                       </g>
                     </g>
@@ -117,11 +118,11 @@ const NavBar = () => {
                     <g></g>
                     <g></g>
                   </svg>
-                </a>
+                </Link>
               </li>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
+              <form className="form-inline">
+                <button className="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i className="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
             </ul>

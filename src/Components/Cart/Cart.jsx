@@ -1,22 +1,38 @@
-// src/components/Cart.jsx
-import React, { useEffect } from 'react';
+// src/Components/Cart/Cart.jsx
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, incrementQuantity, decrementQuantity, removeFromCart } from '../../Utils/Redux/cartSlice';
+import { incrementQuantity, decrementQuantity, removeFromCart } from '../../Utils/Redux/cartSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import './Cart.css';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    storedItems.forEach(item => {
-      if (!cart.some(cartItem => cartItem.id === item.id)) {
-        dispatch(addToCart(item));
-      }
-    });
-  }, [dispatch, cart]);
+  const handleStartShopping = () => {
+    navigate('/product');
+  };
+
+  if (cart.length === 0) {
+    return (
+      <section className="empty-cart-section">
+        <div className="container">
+          <div className="empty-cart-content">
+            <h3>Cart is empty</h3>
+            <button
+              className="btn btn-danger"
+              onClick={handleStartShopping}
+            >
+              Start Shopping
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="h-100">
